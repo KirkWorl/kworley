@@ -19,11 +19,11 @@ Semester: Fall 2017
     <!-- Close head. -->
     
     <style>
-        #homeButton {
+        #aboutButton {
             font-size: 2.1em;
         }
         
-        #homeButton:hover {
+        #aboutButton:hover {
             border-bottom: 2px orange solid;
             font-size: 2.4em;
             transition: .9s;
@@ -32,10 +32,6 @@ Semester: Fall 2017
     
     <!-- Body location. -->
     <body>
-        <header>
-            <h1>Kirk Worley</h1>
-        </header>
-        
         <nav>
             <hr width="50%"/>
             <a id="homeButton" href="index.html">Home</a>
@@ -45,23 +41,36 @@ Semester: Fall 2017
 
         <br/><br/>
         
-        <!-- Main location. -->
-        <main>
-            <figure id="imgMe">
-                <img src="img/kirk_google.jpg" alt="Picture of Kirk Worley sitting atop a Google sign." width=700 height=500 />
-            </figure>
+        <div id="content">
+            <table>
+                <tr id="tableHeader">
+                    <td><strong>Programming Language</strong></td>
+                    <td><strong>Years Experience</strong></td>
+                </tr>
+                <tr class="tableRow">
+                    <td>Python</td>
+                    <td>3</td>
+                </tr>
+                <tr class="tableRow">
+                    <td>C++</td>
+                    <td>3</td>
+                </tr>
+                <tr class="tableRow">
+                    <td>Ruby</td>
+                    <td>2</td>
+                </tr>
+                <tr class="tableRow">
+                    <td>Java</td>
+                    <td>1</td>
+                </tr>
+            </table>
             
-            <div id="welcomeText">
-                Hello! <br/>
-                <p>You are currently viewing my personal portfolio website.</p>
-                <p>I am a Software Engineer and recently interned at Google.</p>
-                <p>Please feel free to contact me.</p>
-                
-                <em>"Well, of course it'll all be gone someday. I think that's alright."</em><br/>
-                - Austin T.
-            </div>
-        </main>
-        <!-- Close main. -->
+            <ul>
+                <li><span class="hobby">Programming</span>: I enjoy programming in my spare time, creating side projects and small apps to practice my skills.</li>
+                <li><span class="hobby">Swimming</span>: I swim as much as possible. A CSUMB Otter loves the water!</li>
+                <li><span class="hobby">Gaming</span>: I love to game. Some games I particularly enjoy are Warframe, Dark Souls, and Secret of Mana.</li>
+            </ul>
+        </div>
         
         <!-- Footer location. -->
         <footer>

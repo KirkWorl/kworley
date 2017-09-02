@@ -1,0 +1,59 @@
+body {
+    background-color: black;
+    text-align: center;
+}
+
+#centerTitle {
+    font-family: Pacifico;
+    color: yellow;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.seasonText {
+    font-family: Pacifico;
+    color: white;
+    text-align: center;
+}
+
+#spring:hover {
+    transform: scale(1.25, 1.25);
+}
+
+#summer:hover {
+    transform: scale(1.25, 1.25);
+}
+
+#fall:hover {
+    transform: scale(1.25, 1.25);
+}
+
+#winter:hover {
+    transform: scale(1.25, 1.25);
+}
+
+#spring {
+    border-top-left-radius: 25px;
+}
+
+#summer {
+    border-top-right-radius: 25px;
+}
+
+#fall {
+    border-bottom-left-radius: 25px;
+}
+
+#winter {
+    border-bottom-right-radius: 25px;
+}
+
+div {
+    text-align: center;
+    display: inline-block;
+}
+
+h4 {
+    margin-top: 0px;
+    margin-bottom: 1px
+}

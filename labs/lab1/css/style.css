@@ -1,10 +1,17 @@
 body {
     background-color: black;
     color: white;
+    text-align: center;
 }
 
 header, main, nav, footer {
     text-align: center;
+}
+
+h1 {
+    font-family: "Pacifico", cursive;
+    font-size: 4em;
+    margin-bottom: 0px;
 }
 
 nav a {
@@ -17,8 +24,12 @@ nav a {
 
 nav a:hover {
     border-bottom: 2px orange solid;
-    font-size: 2em;
+    font-size: 2.4em;
     transition: .9s;
+}
+
+#welcomeText {
+    text-align: left;
 }
 
 #imgMe, #welcomeText {
@@ -26,5 +37,41 @@ nav a:hover {
 }
 
 footer {
+    font-size: 0.7em;
     clear: left;
+    color: orange;
+}
+
+#csumbLogo {
+    margin: auto;
+}
+
+table {
+    margin: 0px auto;
+}
+
+td {
+    padding-right: 10px;
+    font-size: 1.3em;
+}
+
+td strong {
+    color: orange;
+}
+
+#tableHeader {
+    background-color: #351a00;
+}
+
+.tableRow {
+    background-color: #753900;
+}
+
+ul {
+    text-align: left;
+    padding-left: 200px;
+}
+
+.hobby {
+    color: gold;
 }
