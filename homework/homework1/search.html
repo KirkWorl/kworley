@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<!--
+Author: Kirk Worley
+Date: 4 September 2017
+Class: CST 336 - Internet Programming
+Professor: Dr. Miguel Lara
+
+References:
+jquery.flip.min.js retrieved from: https://github.com/nnattawat/flip
+Subject to copyright by the MIT license.
+-->
+    <head>
+        <meta charset="utf-8">
+        <title>CS Knowledge Card</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Faustina" rel="stylesheet">
+        <link href="img/favicon.png" rel="icon">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- JS file for flip transform. -->
+        <script src="js/jquery.flip.min.js"></script>
+    </head>
+
+    <script>
+    /* global $ */
+        $(function() {
+            $(".card").flip({
+                trigger: "click"
+            });
+        });
+    </script>
+    
+    <body>
+        <h1>Machine Learning - Search Engines <i class="material-icons">&#xe312;</i></h1>
+        <nav>
+            <a href="index.html">Overview</a><span class="bar">|</span>
+            <a href="whyimportant.html">The Importance</a><span class="bar">|</span>
+            <a href="gaming.html">Gaming</a><span class="bar">|</span>
+            <a id="current" href="search.html">Search Engines</a>
+        </nav>
+        <hr width=75%>
+        
+        <main>
+            <h3 id="introText">How does machine learning assist search engines? Click the card below to find out!</h3>
+            
+            <div class="card">
+                <div class="front">
+                    <img src="https://cdn-images-1.medium.com/max/1600/1*M8HhY8d-WzEGLohTNpOQYQ.jpeg" alt="Detailed image of a search bar.">
+                </div>
+                <div class="back">
+                    <div id="overviewText">
+                        <h4>Machine Learning and Its Role in Search</h4>
+                        <p>Machine learning <span id="imprtnt">plays a core part at almost every part of the stack</span> at large search engines like 
+                        <span class="blue">G</span><span class="red">o</span><span class="yellow">o</span><span class="blue">g</span><span class="green">l</span><span class="red">e</span>
+                        or 
+                        <span class="bing">Bing</span>.
+                        <br>
+                        Machine learning plays an important role in search engines, and is currently one of the biggest avenues in which machine learning is making progress. It is 
+                        utilized in search rankings, where systems can learn how to better rank queries and results via different types of search rankings. Machine learning is also 
+                        embedded in understanding any particular query; It helps address problems like query classification, spelling suggestions, query expansion, and intent 
+                        disambiguation. Another area it assists in is search features. These can be things like site links, knowledge graphs, and items other than the actual results.
+                        Yet another area machine learning is crucial in, and one of the biggest functions of a search engine is web crawling. To index webpages and make them accessible
+                        search engines first have to 'crawl' the web, that is, visit webpages and take snapshots. Machine learning helps systems learn how often to crawl a particular
+                        site, and the optimal manner in which to do so. These are just a couple of areas in which machine learning has made its mark on search engines, and will continue
+                        to develop in the future.
+                        </p>
+                    
+                    <img src="https://blog.ranksonic.com/wp-content/uploads/2015/08/Bing-y-Google-se-unen-con-el-fin-de-premiar-a-los-sitios-web-adaptados-a-m%C3%B3viles-630x410.png" width=300 height=205 alt="Image of the Google logo above the Bing logo.">
+                    </div>
+                </div>
+            </div>
+            
+        <p><strong>Source: </strong><a id="source" href="https://medium.com/@nikhilbd/what-are-some-uses-of-machine-learning-in-search-engines-5770f534d46b">Medium - Machine Learning in Search Engines</a></p>
+        </main>
+        
+    </body>
+    
+    <footer>
+        <hr>
+        <img id="csumbLogo" src="http://www.cur.org/assets/1/7/MainFCKEditorDimension/CSUMB-Logo-Blue.png" width=200 height=50 />
+        <br/>
+        CST 336: Internet Programming. 2017&copy; Worley<br/>
+        <strong>Disclaimer:</strong> The information in this webpage is used for academic purposes only.
+    </footer>
+</html>

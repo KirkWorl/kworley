@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<!--
+Author: Kirk Worley
+Date: 4 September 2017
+Class: CST 336 - Internet Programming
+Professor: Dr. Miguel Lara
+
+References:
+jquery.flip.min.js retrieved from: https://github.com/nnattawat/flip
+Subject to copyright by the MIT license.
+-->
+    <head>
+        <meta charset="utf-8">
+        <title>CS Knowledge Card</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Faustina" rel="stylesheet">
+        <link href="img/favicon.png" rel="icon">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- JS file for flip transform. -->
+        <script src="js/jquery.flip.min.js"></script>
+    </head>
+
+    <script>
+    /* global $ */
+        $(function() {
+            $(".card").flip({
+                trigger: "click"
+            });
+        });
+    </script>
+    
+    <body>
+        <h1>Machine Learning - Why is it Important? <i class="material-icons">&#xe80c;</i></h1>
+        <nav>
+            <a href="index.html">Overview</a><span class="bar">|</span>
+            <a id="current" href="whyimportant.html">The Importance</a><span class="bar">|</span>
+            <a href="gaming.html">Gaming</a><span class="bar">|</span>
+            <a href="search.html">Search Engines</a>
+        </nav>
+        <hr width=75%>
+        
+        <main>
+            <h3 id="introText">Why is machine learning important to us? Click the card below to find out!</h3>
+            
+            <div class="card">
+                <div class="front">
+                    <img src="http://blog.hackerearth.com/wp-content/uploads/2017/03/blog-01.jpg" alt="Image of a person holding a hologram of a neural network.">
+                </div>
+                <div class="back">
+                    <div id="overviewText">
+                        <h4>How is machine learning useful to us?</h4>
+                        <p>A fundamental advantage of machine learning is <span id="imprtnt">mimicking the pattern matching that human brains develop</span> and translating that into code.<br>
+                        Due to the versatility that machine learning has, it can be applied to a number of scenarios in our everyday lives-- as well as the industry in
+                        which it thrives-- the tech industry. Machine learning is quickly permeating through the tech industry's infrastructure and becoming a permanent
+                        and increasingly necessary occupant. Machine learning simply put, makes things better when used correctly. Already, machine learning technology is
+                        being incorporated into business for predicting data, virtual assistant solutions like Alexa and Google Home, adaptive understanding technology,
+                        customer care services, and many more aspects.
+                        </p>
+                        
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51%2BMAjHQ6fL._SL1000_.jpg" alt="An image of a roomba, not an Amazon Echo dot." width=275 height=275>
+                        <br><span id="tinyText">*This is a roomba, not an Amazon Echo.</span>
+                    </div>
+                </div>
+            </div>
+            
+        <p><strong>Source: </strong><a id="source" href="https://www.interactions.com/machine-learning-important/">Interactions - Importance of Machine Learning</a></p>
+        </main>
+        
+    </body>
+    
+    <footer>
+        <hr>
+        <img id="csumbLogo" src="http://www.cur.org/assets/1/7/MainFCKEditorDimension/CSUMB-Logo-Blue.png" width=200 height=50 />
+        <br/>
+        CST 336: Internet Programming. 2017&copy; Worley<br/>
+        <strong>Disclaimer:</strong> The information in this webpage is used for academic purposes only.
+    </footer>
+</html>

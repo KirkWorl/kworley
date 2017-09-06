@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<!--
+Author: Kirk Worley
+Date: 4 September 2017
+Class: CST 336 - Internet Programming
+Professor: Dr. Miguel Lara
+
+References:
+jquery.flip.min.js retrieved from: https://github.com/nnattawat/flip
+Subject to copyright by the MIT license.
+-->
+    <head>
+        <meta charset="utf-8">
+        <title>CS Knowledge Card</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="img/favicon.png" rel="icon">
+        <link href="https://fonts.googleapis.com/css?family=Faustina" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- JS file for flip transform. -->
+        <script src="js/jquery.flip.min.js"></script>
+    </head>
+
+    <script>
+    /* global $ */
+        $(function() {
+            $(".card").flip({
+                trigger: "click"
+            });
+        });
+    </script>
+    
+    <body>
+        <h1>Machine Learning - Applications in Gaming <i class="material-icons">&#xe338;</i></h1>
+        <nav>
+            <a href="index.html">Overview</a><span class="bar">|</span>
+            <a href="whyimportant.html">The Importance</a><span class="bar">|</span>
+            <a id="current" href="gaming.html">Gaming</a><span class="bar">|</span>
+            <a href="search.html">Search Engines</a>
+        </nav>
+        <hr width=75%>
+        
+        <main>
+            <h3 id="introText">What about machine learning in things like gaming? Click the card below to find out!</h3>
+            
+            <div class="card">
+                <div class="front">
+                    <img src="https://www.geforce.com/sites/default/files-world/screenshots/elder-scrolls-v-skyrim/screenshot-8.jpg" alt="An image of a dragon atop a mountain from the game 'Skyrim.'">
+                </div>
+                <div class="back">
+                    <div id="overviewText">
+                        <h4>Machine Learning in Gaming - A New AI</h4>
+                        <p>Gaming is an ever changing industry with constantly updating <span id="imprtnt">artificial intelligence that can utilize machine learning</span> to create greater challenges.<br>
+                        The earliest instance of artificial intelligence dates back to 1952, where a rules based AI was created to play perfect tic-tac-toe games. Since then, artificial intelligence has
+                        been a major staple in the gaming industry, allowing for new and innovative depth in gaming experiences. This surge in the industry in turn led to a highly adaptive machine learning
+                        need for developers working with this kind of technology. One example of this kind of machine learning being utilized to conquer the gaming world is a neural network built to learn
+                        the game 'Super Mario World.' The project, titled MarI/O was created by a former Microsoft engineer named Seth Hendrickson. The video below explains more in depth (~6min).
+                        </p>
+                        
+                        <iframe width=370 height=270 src="https://www.youtube.com/embed/qv6UVOQ0F44"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+        <p><strong>Source: </strong><a id="source" href="https://www.techemergence.com/machine-learning-in-gaming-building-ais-to-conquer-virtual-worlds/">TechEmergence - Machine Learning in Gaming</a></p>
+        </main>
+        
+    </body>
+    
+    <footer>
+        <hr>
+        <img id="csumbLogo" src="http://www.cur.org/assets/1/7/MainFCKEditorDimension/CSUMB-Logo-Blue.png" width=200 height=50 />
+        <br/>
+        CST 336: Internet Programming. 2017&copy; Worley<br/>
+        <strong>Disclaimer:</strong> The information in this webpage is used for academic purposes only.
+    </footer>
+</html>

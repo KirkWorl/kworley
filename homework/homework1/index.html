@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<!--
+Author: Kirk Worley
+Date: 4 September 2017
+Class: CST 336 - Internet Programming
+Professor: Dr. Miguel Lara
+
+References:
+jquery.flip.min.js retrieved from: https://github.com/nnattawat/flip
+Subject to copyright by the MIT license.
+-->
+    <head>
+        <meta charset="utf-8">
+        <title>CS Knowledge Card</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Faustina" rel="stylesheet">
+        <link href="img/favicon.png" rel="icon">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- JS file for flip transform. -->
+        <script src="js/jquery.flip.min.js"></script>
+    </head>
+
+    <script>
+    /* global $ */
+        $(function() {
+            $(".card").flip({
+                trigger: "click"
+            });
+        });
+    </script>
+    
+    <body>
+        <h1>Machine Learning - A Rapidly Accelerating Phenomena <i class="material-icons">&#xe80c;</i></h1>
+        <nav>
+            <a id="current" href="index.html">Overview</a><span class="bar">|</span>
+            <a href="whyimportant.html">The Importance</a><span class="bar">|</span>
+            <a href="gaming.html">Gaming</a><span class="bar">|</span>
+            <a href="search.html">Search Engines</a>
+        </nav>
+        <hr width=75%>
+        
+        <main>
+            <h3 id="introText">What is 'machine learning?' Click the card below to find out!</h3>
+            
+            <div class="card">
+                <div class="front">
+                    <img src="https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAjIAAAAJDMxNGRhOTc0LTFmNzYtNDkzYS1hNmU4LWQ2Mjk3NTMzNTg4OQ.jpg" alt="Image that says machine learning.">
+                </div>
+                <div class="back">
+                    <div id="overviewText">
+                        <h4>A Machine Learning Overview</h4>
+                        <p>Machine learning is a branch of artificial intelligence. One that revolves around teaching machines to <span id="imprtnt">learn and adapt from experience</span>, instead of 
+                        programming them to be inherently smart.<br>
+                        Machine learning systems are usually utilized in making predictions on data, and can be incorporated into several different aspects of our lives. 
+                        Machine learning entails creating programs, systems, and/or infrastructure that can learn from data to become 'smarter.' This enables the system to make 
+                        better predictions on similar data, with more accurate results. However, machine learning is not just about prediction. Recently, machine learning has
+                        made many developments and is being included in more applications, like: being able to apply complex algorithms to big data, assist in autonomous vehicle 
+                        operation, and fraud detection systems.
+                        </p>
+                    
+                    <img src="https://cbsnews2.cbsistatic.com/hub/i/r/2016/02/29/26963b9f-120e-4ef7-a643-4ccb27f9b310/thumbnail/620x350/de40a67b11e5c33da96b2891bdb7378c/google-self-driving-car.jpg" height=270 alt="Image of a Google autonomous car.">
+                    </div>
+                </div>
+            </div>
+            
+        <p><strong>Source: </strong><a id="source" href="https://www.sas.com/en_us/insights/analytics/machine-learning.html">SAS - Machine Learning Overview</a></p>
+        </main>
+        
+    </body>
+    
+    <footer>
+        <hr>
+        <img id="csumbLogo" src="http://www.cur.org/assets/1/7/MainFCKEditorDimension/CSUMB-Logo-Blue.png" width=200 height=50 />
+        <br/>
+        CST 336: Internet Programming. 2017&copy; Worley<br/>
+        <strong>Disclaimer:</strong> The information in this webpage is used for academic purposes only.
+    </footer>
+</html>
