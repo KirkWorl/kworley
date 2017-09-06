@@ -33,6 +33,10 @@ nav a {
     border-bottom: 1px solid orange;
 }
 
+#topHR {
+    width: 75%;
+}
+
 nav a:hover {
     border-bottom: 2px solid purple;
     font-size: 1.8em;
