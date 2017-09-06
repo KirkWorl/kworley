@@ -20,16 +20,15 @@ Subject to copyright by the MIT license.
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- JS file for flip transform. -->
         <script src="js/jquery.flip.min.js"></script>
+        <script>
+            /* global $ */
+                $(function() {
+                    $(".card").flip({
+                        trigger: "click"
+                    });
+                });
+        </script>
     </head>
-
-    <script>
-    /* global $ */
-        $(function() {
-            $(".card").flip({
-                trigger: "click"
-            });
-        });
-    </script>
     
     <body>
         <h1>Machine Learning - Search Engines <i class="material-icons">&#xe312;</i></h1>
