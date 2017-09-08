@@ -1,0 +1,32 @@
+main {
+    text-align: center;
+}
+
+#humanT {
+    padding-left: 10px;
+    margin-right: 150px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-family: 'Lobster', cursive;
+}
+
+#compT {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-family: 'Lobster', cursive;
+}
+
+#human {
+    margin-right: 150px;
+}
+
+header {
+    text-align: center;
+    font-family: 'Lobster', cursive;
+}
+
+h3 {
+    color: green;
+    font-size: 1.5em;
+    font-family: 'Lobster', cursive;
+}
