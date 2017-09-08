@@ -29,7 +29,7 @@
             switch($randomValue1) {
                 case 0:
                     $totalPoints = 1000;
-                    echo "<h1>Jackpot!</h1>";
+                    echo "<h1 id='jp'>Jackpot!</h1>";
                     break;
                 case 1:
                     $totalPoints = 500;

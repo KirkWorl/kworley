@@ -48,16 +48,50 @@
         cursor:pointer;
     }
     
-    #output{
-     width:600px;   
-     margin:0 auto;
-     position:absolute;
-     text-align:center;
-     top:450px;
-     font-size:1.5em;
-     line-height: .7em;
+    #output {
+         width:600px;   
+         margin:0 auto;
+         position:absolute;
+         text-align:center;
+         top:450px;
+         font-size:1.5em;
+         line-height: .7em;
     }
     
+    #jp{
+        -webkit-animation: rainbow 2s infinite; 
+        
+        -ms-animation: rainbow 2s infinite;
+        
+        animation: rainbow 2s infinite;
+    }
+    
+    /* Chrome, Safari, Opera */
+    @-webkit-keyframes rainbow{
+    	20%{color: red;}
+    	40%{color: yellow;}
+    	60%{color: green;}
+    	80%{color: blue;}
+    	100%{color: orange;}	
+    }
+/* Internet Explorer */
+    @-ms-keyframes rainbow{
+    	20%{color: red;}
+    	40%{color: yellow;}
+    	60%{color: green;}
+    	80%{color: blue;}
+    	100%{color: orange;}	
+    }
+
+/* Standar Syntax */
+    @keyframes rainbow{
+    	20%{color: red;}
+    	40%{color: yellow;}
+    	60%{color: green;}
+    	80%{color: blue;}
+    	100%{color: orange;}	
+    }
+        
     footer{
         font-family: "Times New Roman", Georgia, Serif;
         font-size:.8em;
