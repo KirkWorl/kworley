@@ -82,7 +82,7 @@ Lab 3: Silverjack Game
             <?=printWinners()?>
             
             <!-- Contains winner, points, and button to "play again" -->
-            <input type="button" value="Play Again" onClick="reload()">
+            <input type="button" value="Play Again" onClick="window.location.reload()">
             
             <?=elapsedTime()?>
         </div>

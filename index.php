@@ -31,7 +31,15 @@
         <h1> Welcome to my CST 336 website thingamabob.</h1>
         <nav>
             <a href='homework/homework1'>Homework 1</a>|
-            <a href='homework/homework2'>Homework 2</a>
+            <a href='homework/homework2'>Homework 2</a>|
+            <a href='homework/homework3'>Homework 3</a>
+        </nav>
+        <br>
+        <nav>
+            <a href='labs/lab1'>Lab 1</a>|
+            <a href='labs/lab2/777'>Lab 2</a>|
+            <a href='labs/lab3'>Lab 3</a>|
+            <a href='labs/lab4'>Lab 4</a>
         </nav>
     </body>
 </html>
