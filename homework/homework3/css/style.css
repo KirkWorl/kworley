@@ -14,6 +14,10 @@ hr {
     display: inline-block;
 }
 
+#fError {
+    color: orange;
+}
+
 #title {
    height: 110px;
    width: 100%;
