@@ -1,0 +1,43 @@
+body {
+    text-align: center;
+    background-color: lightblue;
+}
+
+table {
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+a {
+    color: magenta;
+    text-decoration: none;
+}
+
+a:hover {
+    color: darkblue;
+    text-decoration: none;
+    transition: .5s;
+}
+
+#history {
+    padding-top: 50px;
+}
+
+#theForm {
+    float: left;
+    border: 3px solid gold;
+    border-radius: 15px;
+    padding: 15px;
+    margin-left: 50px;
+}
+
+iframe {
+    padding: 10px;
+    border: 3px solid gold;
+    border-radius: 15px;
+}
