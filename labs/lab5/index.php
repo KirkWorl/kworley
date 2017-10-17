@@ -118,18 +118,18 @@ function displayDevices(){
         <div id="content">
             <div id="theForm">
                 <form>
-                    Device: <input type="text" name="deviceName" placeholder="Device Name">
-                    Type: 
+                    <strong>Device:</strong><input type="text" name="deviceName" placeholder="Device Name">
+                    <strong>Type:</strong> 
                     <select name="deviceType">
                         <option value="">-- Select One --</option>
                         <?=getDeviceTypes()?>
                     </select>
                     
                     <input type="checkbox" name="available" id="available">
-                    <label for="available">Available</label>
+                    <label for="available"><strong>Available</strong></label>
                     
                     <br>
-                    Order by:
+                    <strong>Order by:</strong>
                     <input type="radio" name="orderBy" id="orderByName" value="name"/><label for="oderByName">Name</label>
                     <input type="radio" name="orderBy" id="orderByPrice" value="price"/><label for="oderByPrice">Price</label>
                     

@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-color: lightblue;
+    background-color: #ffb347;
 }
 
 table {
@@ -14,12 +14,12 @@ table, th, td {
 }
 
 a {
-    color: magenta;
+    color: #9932CC;
     text-decoration: none;
 }
 
 a:hover {
-    color: darkblue;
+    color: cyan;
     text-decoration: none;
     transition: .5s;
 }
@@ -30,7 +30,7 @@ a:hover {
 
 #theForm {
     float: left;
-    border: 3px solid gold;
+    border: 3px solid blue;
     border-radius: 15px;
     padding: 15px;
     margin-left: 50px;
@@ -38,6 +38,6 @@ a:hover {
 
 iframe {
     padding: 10px;
-    border: 3px solid gold;
+    border: 3px solid blue;
     border-radius: 15px;
 }
