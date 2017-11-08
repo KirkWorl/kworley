@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="jquery-3.2.1.min.js"></script>
+        <title>Sorting Numbers</title>
+        <style>
+            h3 {
+                color: red;
+            }
+            
+            h2 {
+                color: green;
+            }
+            
+            button {
+                border-radius: 6px;
+                box-shadow: -2px 2px 1px black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Sorting Numbers</h1>
+        <form>
+            Enter 3 numbers from 1 to 50:
+            </br>
+            Number 1:
+            <input type = "text" id = "one" name = "num1">
+            Number 2: 
+            <input type = "text" id = "two" name = "num2">
+            Number 3: 
+            <input type = "text" id = "three" name = "num3">
+        </form>
+        
+       <button onClick = "bigNum()" id="submit">Sort!</button>
+        
+        <span id="result"></span>
+        <span id="disp"></span>
+        
+        <script >
+            function bigNum(){
+                var num1 = document.getElementById("one").value;
+                var num2 = document.getElementById("two").value;
+                var num3 = document.getElementById("three").value;
+                var array = [num1, num2, num3];
+                array.sort();
+                inRange(array);
+                
+                
+            }
+            
+            function inRange(array) {
+                
+                if(array[0] == array[1] && array[1] == array[2]){
+                    if(array[0] > 50 || array[0] < 1){
+                        document.getElementById("result").innerHTML = ("<h3>" + (array[0]) + " is not within the range!</h3></br>");
+                        return;
+                    }
+                    document.getElementById("result").innerHTML = ("<h2>All Numbers Are Equal!!</h2></br>"); 
+                }
+                
+                else{
+                    for (var i = 0; i < array.length; i++){
+                        if (array[i] > 50 || array[i] < 1) {
+                            document.getElementById("result").innerHTML = ("<h3>" + (array[i]) + " is not within the range!</h3></br>"); 
+                            return;
+                        }
+                    }
+                    document.getElementById("result").innerHTML = "<h2>The biggest number is " + array[2] + "</h2></br>"; 
+                    display(array);
+                }
+            }
+            
+            function display(array) {
+                document.getElementById("disp").innerHTML = "The numbers in ascending order are: "; 
+                for (var i = 0; i < array.length; i++){
+                    document.getElementById("disp").innerHTML += (array[i]);
+                    if (i == array.length - 1){
+                        document.getElementById("disp").innerHTML += (" ");
+                    }
+                    else {
+                        document.getElementById("disp").innerHTML += (", "); 
+                    }
+                }
+                document.getElementById("disp").innerHTML += "</br>";
+            }
+        </script>
+        
+        
+        
+    </body>
+</html>
