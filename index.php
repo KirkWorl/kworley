@@ -40,7 +40,13 @@
             <a href='labs/lab2/777'>Lab 2</a>|
             <a href='labs/lab3'>Lab 3</a>|
             <a href='labs/lab4'>Lab 4</a>|
-            <a href='labs/lab5'>Lab 5</a>
+            <a href='labs/lab5'>Lab 5</a>|
+            <a href='labs/lab6'>Lab 6</a>|
+            <a href='labs/lab7'>Lab 7</a>
+        </nav>
+        <br>
+        <nav>
+            <a href='project/index.php'>Team Project</a>
         </nav>
     </body>
 </html>
