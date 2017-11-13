@@ -1,4 +1,3 @@
-
 var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 
                 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 
                 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
@@ -12,9 +11,7 @@ var selectedHint = "";
 var board = "";
 var remainingGuesses = 6;
 
-
 window.onload = startGame();
-
 
 
 $(".replayBtn").on('click', function() {
@@ -27,6 +24,9 @@ $("#letters").on("click", ".letter", function(){
     disableButton($(this));
 });
 
+$(".hint").on("click", function() {
+    $(".hint").text("Hint: " + selectedHint);
+});
 
 function pickWord() {
     let randInt = Math.floor(Math.random() * words.length);
@@ -34,23 +34,18 @@ function pickWord() {
     selectedHint = words[randInt].hint;
 }
 
-
-
 function createLetters() {
-    for (var letter of alphabet) {
+    for(var letter of alphabet) {
         let letterInput = '"' + letter + '"';
         $("#letters").append("<button class='btn btn-success letter' id='" + letter + "'>" + letter + "</button>");
     }
 }
-
-
 
 function initBoard() {
     for (var letter in selectedWord) {
         board += '_';
     }
 }
-
 
 function updateBoard() {
     $("#word").empty();
@@ -61,9 +56,8 @@ function updateBoard() {
     }
     
     $("#word").append("<br />");
-    $("#word").append("<span class='hint'>Hint: " + selectedHint + "</span>")
+    $("#word").append("<span class='hint'>Hint</span>");
 }
-
 
 function updateWord(positions, letter) {
     for (var pos of positions) {
@@ -78,17 +72,14 @@ function updateWord(positions, letter) {
     }
 }
 
-
 function checkLetter(letter) {
     var positions = new Array();
     
- 
     for (var i = 0; i < selectedWord.length; i++) {
         if (letter == selectedWord[i]) {
             positions.push(i);
         }
     }
-    
    
     if (positions.length > 0) {
         updateWord(positions, letter);
@@ -102,20 +93,13 @@ function checkLetter(letter) {
     }
 }
 
-
-
 function updateMan() {
     $("#hangImg").attr("src", "img/stick_" + (6 - remainingGuesses) + ".png");
 }
 
-
-
 function startGame() {
-   
     pickWord();
     createLetters();
-    
-   
     initBoard();
     updateBoard();
 }
@@ -130,15 +114,12 @@ function endGame(win) {
     }
 }
 
-
-
 function disableButton(btn) {
     btn.prop("disabled",true);
     btn.attr("class", "btn btn-danger")
 }
 
-
-
+// Helper function.
 function replaceAt(str, index, value) {
     return str.substr(0, index) + value + str.substr(index + value.length);
 }
