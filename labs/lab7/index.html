@@ -1,64 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hangman</title>
-        <link href="css/styles.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <title>Hangman Game</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css" />
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
     </head>
-    
     <body>
-        <div class="container text-center">
+        <div class='container text-center'>
             <header>
-                <h1>Hangman</h1>
-                <h4>Javascript Edition</h4>
+                <h1>Hangman! (JS)</h1>
             </header>
             
             <div id="word"></div>
             <div id="letters"></div>
             
+            <div id="won">
+                <h2>You Won!</h2>
+                <button class="replayBtn btn btn-success">Play Again</button>
+            </div>
+            <div id="lost">
+                <h2>You Lost!</h2>
+                <button class="replayBtn btn btn-warning">Play Again</button>
+            </div>
+            
             <div id="man">
-                <img src="img/stick_0.png" id="hangImg">
+                <img src="img/stick_0.png" class="manImg" id="hangImg">
             </div>
         </div>
         
-        <script>
-            function initBoard() {
-                for(var i = 0; i < selectedWord.length; i++) {
-                    board += "_";
-                }
-            }
-            
-            function pickWord() {
-                var randomInt = Math.floor(Math.random() * words.length);
-                selectedWord = words[randomInt];
-            }
-            
-            function updateBoard() {
-                for(var letter of board) {
-                    document.getElementById("word").innerHTML += letter + " ";
-                }
-            }
-            
-            function startGame() {
-                pickWord();
-                initBoard();
-                updateBoard();
-            }
-            
-            var selectedWord = "";
-            var selectedHint = "";
-            var board = "";
-            var remainingGuesses = 6;
-            var words = ["snake", "monkey", "beetle"];
-            
-            startGame();
-        </script>
+    <script src='js/hangman.js'></script>
     </body>
 </html>
