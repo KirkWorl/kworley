@@ -20,7 +20,7 @@
                     },
                     
                     success: function(data, status) {
-                        $("#numEarthquakes").html(data['metadata'].count + " Earthquakes in the region!");
+                        $("#numEarthquakes").html(data['metadata'].count + " Earthquakes in the region in the last 30 days!");
                         $("#googlemapsimg").html("<button id='seeme'>View!</button> <button id='close'>Close</button><br>");
                         updateRecords();
                         
