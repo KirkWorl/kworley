@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>How Many Earthquakes?</title>
+        <meta charset="utf-8">
+        <link href="gbico.png" rel="icon">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            function findLocation() {
+                $.ajax({
+                    type: "get",
+                    url: "https://earthquake.usgs.gov/fdsnws/event/1/query",
+                    dataType: "json",
+                    data: {
+                        "format":"geojson",
+                        "latitude": $("#latitude").val(),
+                        "longitude": $("#longitude").val(),
+                        "maxradius": $("#mradius").val(),
+                        "minmag": $("#magnitude").val()
+                    },
+                    
+                    success: function(data, status) {
+                        $("#numEarthquakes").html(data['metadata'].count + " Earthquakes in the region!");
+                        $("#googlemapsimg").html("<button id='seeme'>View!</button> <button id='close'>Close</button><br>");
+                        updateRecords();
+                        
+                        $("#seeme").click( function() {
+                            var coord = $("#latitude").val() + "," + $("#longitude").val();
+                            $("#googlemapsimg").append("<br><img src='https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyCe19yVv1MCH_3QDSbFAFRAtXIX_6xzKgU&size=500x500&markers=color:red|"+coord+"&zoom=9'>");
+                        });
+                        
+                        $("#close").click( function() {
+                           $("#googlemapsimg").html("<button id='seeme'>View!</button>&nbsp;<button id='close'>Close</button>"); 
+                        });
+                    },
+                    
+                    complete: function(data, status) {
+                        // Things
+                    }
+                });
+            }
+            
+            function updateRecords() {
+                $.ajax({
+                   type: "get",
+                   url: "update.php",
+                   dataType: "text",
+                   data: {
+                       "latitude": $("#latitude").val(),
+                       "longitude": $("#longitude").val()
+                   },
+                   
+                   success: function(data) {
+                        $("#history").html(data);
+                   },
+                   
+                   complete: function(data) {
+                       // Things
+                   }
+                });
+            }
+            
+            $(document).ready( function() {
+                $("#search").on("click", function() {
+                    findLocation();
+                });
+                
+                $('#currentlat').html($('#latitude').val() + "&deg; N");
+                $('#currentlon').html($('#longitude').val() + "&deg; W");
+                $('#currentmag').html($('#magnitude').val());
+                $('#currentrad').html($('#mradius').val() + "&deg;");
+               
+                $('#latitude').on('input', function() {
+                    $('#currentlat').html($('#latitude').val() + "&deg; N");
+                });
+                
+                $('#longitude').on('input', function() {
+                    $('#currentlon').html($('#longitude').val() + "&deg; W");
+                });
+                
+                $('#magnitude').on('input', function() {
+                    $('#currentmag').html($('#magnitude').val());
+                });
+                
+                $('#mradius').on('input', function() {
+                    $('#currentrad').html($('#mradius').val() + "&deg;");
+                });
+            });
+        </script>
+        <style>
+            body {
+                background-color: #212b31;
+                color: gold;
+            }
+            
+            #slider1, #slider2, #slider3, #slider4 {
+                width: 600px;
+            }
+            
+            #upperdiv {
+                width: 85%;
+            }
+            
+            #lowerdiv {
+                width: 66%;
+            }
+            
+            #s1, #s2, #s3, #s4 {
+                width: 85px;
+            }
+            
+            table {
+                margin: auto;
+            }
+            
+            tr, td {
+                padding-top: 6px;
+            }
+            
+            #content {
+                text-align: center;
+            }
+            
+            .slider {
+                -webkit-appearance: none;
+                width: 100%;
+                height: 15px;
+                border-radius: 5px;
+                background: #d3d3d3;
+                outline: none;
+                opacity: 0.7;
+                -webkit-transition: .2s;
+                transition: opacity .2s;
+            }
+            
+            .slider:hover {
+                opacity: 1;
+            }
+            
+            .slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                background: cyan;
+                cursor: pointer;
+            }
+            
+            .slider::-moz-range-thumb {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                background: #4CAF50;
+                cursor: pointer;
+            }
+            
+            #currentlat, #currentlon, #currentmag, #currentrad {
+                font-size: 16px;
+            }
+            
+            input[type=submit], button {
+                border-radius: 25px;
+                background-color: grey;
+                color: cyan;
+                opacity: 0.71;
+                -webkit-transition: .2s;
+                transition: opacity .2s;
+                outline: none;
+                height: 40px;
+                width: 90px;
+                font-size: 1em;
+            }
+            
+            input[type=submit]:hover, button:hover {
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <img src="https://media.giphy.com/media/10Z5TKKAo2Vyla/giphy.gif">
+            <h1>How Many Earthquakes?</h1>
+            
+            <form onsubmit="return false">
+                    <table>
+                        <tr>
+                            <td>Latitude:</td>
+                            <td id="slider1"><input type="range" value="0" min="-90" max="90" step="0.01" name="lat" class="slider" id="latitude"/></td>
+                            <td id="s1">&nbsp;<span id="currentlat"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Longitude:</td>
+                            <td id="slider2"><input type="range" value="0" min="-180" max="180" step="0.01" name="lon" class="slider" id="longitude"/></td>
+                            <td id="s2">&nbsp;<span id="currentlon"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Magnitude:</td>
+                            <td id="slider3"><input type="range" value="3" min="0" max="7" step="1" name="mag" class="slider" id="magnitude"/></td>
+                            <td id="s3">&nbsp;<span id="currentmag"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Radius:</td>
+                            <td id="slider4"><input type="range" value="90" min="0" max="180" step="1" name="rad" class="slider" id="mradius"/></td>
+                            <td id="s4">&nbsp;<span id="currentrad"></span></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" id="search" value="Find!"></td>
+                        </tr>
+                    </table>
+            </form>
+            
+            <hr id="upperdiv">
+            
+            <h4 id="numEarthquakes">Number of quakes will show here!</h4>
+            <div id="googlemapsimg"></div>
+            
+            <hr id="lowerdiv">
+            
+            <div id="history"></div>
+        </div>
+    </body>
+</html>
