@@ -1,7 +1,7 @@
 <?php
-function getDatabaseConnection() {
+function getDatabaseConnection($dbname = 'tcp') {
     $host = 'localhost';
-    $dbname = 'tcp';
+    //$dbname = 'tcp';
     $username = 'root';
     $password = '';
     
