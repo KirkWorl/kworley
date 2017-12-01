@@ -32,7 +32,9 @@
         <nav>
             <a href='homework/homework1'>Homework 1</a>|
             <a href='homework/homework2'>Homework 2</a>|
-            <a href='homework/homework3'>Homework 3</a>
+            <a href='homework/homework3'>Homework 3</a>|
+            <a href='homework/homework4'>Homework 4</a>|
+            <a href='homework/homework5'>Homework 5</a>
         </nav>
         <br>
         <nav>
@@ -42,7 +44,9 @@
             <a href='labs/lab4'>Lab 4</a>|
             <a href='labs/lab5'>Lab 5</a>|
             <a href='labs/lab6'>Lab 6</a>|
-            <a href='labs/lab7'>Lab 7</a>
+            <a href='labs/lab7'>Lab 7</a>|
+            <a href='labs/lab8'>Lab 8</a>|
+            <a href='labs/lab9'>Lab 9</a>
         </nav>
         <br>
         <nav>
