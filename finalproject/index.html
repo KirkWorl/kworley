@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mock Speedruns</title>
+        <meta charset="utf-8">
+        <meta name="author" value="Kirk Worley">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto|Vollkorn+SC" rel="stylesheet">
+        <!-- Lobster = 'cursive', Roboto = 'san-serif', Vollkorn SC = 'serif' -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            function initRunData() {
+                $.ajax({
+                    type: "GET",
+                    url: "api/speedruns.php",
+                    dataType: "json",
+                    data: {"func": '1'},
+                    success: function(data, status) {
+                        var categs = new Set();
+                        categs.add("--");
+                        
+                        for(var i = 0; i < data.length; i++) {
+                            $("#runs").append("<tr>");
+                            $("#runs").append("<td>" + data[i].runner + "</td>");
+                            $("#runs").append("<td>" + data[i].country + "</td>");
+                            $("#runs").append("<td class='gametitle'>" + data[i].gameName + "</td>");
+                            $("#runs").append("<td>" + data[i].runtime + "</td>");
+                            $("#runs").append("<td>" + data[i].categoryName +  ", " + data[i].completion + "</td>");
+                            $("#runs").append("</tr>");
+                            
+                            categs.add(data[i].categoryName);
+                        }
+                        
+                        for(var c of categs) {
+                            $("#runcategory").append("<option>" + c + "</option>");
+                        }
+                    }
+                });
+            }
+            
+            function updateRunData() {
+                $.ajax({
+                    type: "GET",
+                    url: "api/speedruns.php",
+                    dataType: "json",
+                    data: {"func": '2',
+                           "title": $("#gameSearch").val(),
+                           "cat": $("#runcategory").val()
+                    },
+                    success: function(data, status) {
+                        $("#runs").empty();
+                        for(var i = 0; i < data.length; i++) {
+                            $("#runs").append("<tr>");
+                            $("#runs").append("<td>" + data[i].runner + "</td>");
+                            $("#runs").append("<td>" + data[i].country + "</td>");
+                            $("#runs").append("<td class='gametitle'>" + data[i].gameName + "</td>");
+                            $("#runs").append("<td>" + data[i].runtime + "</td>");
+                            $("#runs").append("<td>" + data[i].categoryName +  ", " + data[i].completion + "</td>");
+                            $("#runs").append("</tr>");
+                        }
+                    }
+                });
+            }
+        
+            $(window).on("load resize ", function() {
+                var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+                $('.tbl-header').css({'padding-right':scrollWidth});
+            }).resize();
+                
+            $(document).ready( function() {
+                initRunData();
+                
+                $("#gameSearch").on("input propertychange paste", function() {
+                    updateRunData();
+                });
+                
+                $("#runcategory").on("change", function() {
+                    updateRunData(); 
+                });
+            });
+        </script>
+        <style>
+            @import url("css/style.css");
+        </style>
+    </head>
+    
+    <body>
+        <div id="content">
+            <img id="banner" src="img/banner.jpg" alt="Speedruns Live Mock Website Banner">
+            
+            <div id="searchBar">
+                <form>
+                    <span class="fancytext"> Filter by Game: </span>
+                    <span class="fa fa-search"></span><input type="text" id="gameSearch" placeholder="Search"/>
+                    <span class="fancytext"> Filter by Category: </span>
+                    <select id="runcategory"></select>
+                    <button id="adminLogin" class="fancytext" onclick="location.href='login.php'; return false;">Admin Login</button>
+                </form>
+            </div>
+            
+            <center>
+                <div id="rundata">
+                    <div class="tbl-header">
+                        <table id="runhead" cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th>Runner Name <i class="fa fa-user-circle-o" aria-hidden="true"></i></th>
+                                <th>Country <i class="fa fa-flag" aria-hidden="true"></i></th>
+                                <th>Game Name <i class="fa fa-gamepad" aria-hidden="true"></i></th>
+                                <th>Run Time <i class="fa fa-clock-o" aria-hidden="true"></i></th>
+                                <th>Category <i class="fa fa-table" aria-hidden="true"></i></th>
+                            </tr>
+                        </thead>
+                        </table>
+                    </div>
+                    <div class="tbl-content">
+                        <table id="runs" cellpadding="0" cellspacing="0" border="0">
+                        </table>
+                    </div>
+                </div>
+            </center>
+        </div>
+    </body>
+</html>
