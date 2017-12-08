@@ -36,6 +36,7 @@ if(isset($_POST['submit'])) {
         <title>Admin Login</title>
         <meta charset="utf-8">
         <meta name="author" value="Kirk Worley">
+        <link href="img/ico.png" rel="icon">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto|Vollkorn+SC" rel="stylesheet">
         <!-- Lobster = 'cursive', Roboto = 'san-serif', Vollkorn SC = 'serif' -->

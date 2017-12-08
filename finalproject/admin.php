@@ -37,6 +37,7 @@ function adminLayout() {
         <title>Speedrun Admin Portal</title>
         <meta charset="utf-8">
         <meta name="author" value="Kirk Worley">
+        <link href="img/ico.png" rel="icon">
         <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto|Vollkorn+SC" rel="stylesheet">
         <!-- Lobster = 'cursive', Roboto = 'san-serif', Vollkorn SC = 'serif' -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
